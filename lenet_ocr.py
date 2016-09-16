@@ -52,36 +52,6 @@ args = vars(ap.parse_args())
 # print("[INFO] downloading MNIST...")
 # dataset = datasets.fetch_mldata("MNIST Original")
 
-# reshape the MNIST dataset from a flat list of 784-dim vectors, to
-# 28 x 28 pixel images, then scale the data to the range [0, 1.0]
-# and construct the training and testing splits
-# data = dataset.data.reshape((dataset.data.shape[0], 28, 28))
-# data = data[:, np.newaxis, :, :]
-
-
-
-# (trainData, testData, trainLabels, testLabels) = train_test_split(
-#	data / 255.0, dataset.target.astype("int"), test_size=0.33)
-
-# TODO trainData, testData, trainLabels, testLabels
-# instance_size = 0
-# with open("/Users/Thistle/PycharmProjects/OCR/train.csv") as f:
-#     for line in f:
-#         instance_size += 1
-#
-# trainData = np.zeros((instance_size, 1, 33, 13))  # the shape of instances
-# trainLabels = np.zeros((instance_size,))  # the shape of the labels
-#
-# counter = 0
-# with open("/Users/Thistle/PycharmProjects/OCR/train.csv") as f:
-#     for line in f:
-#         temp = line.split(',')
-#
-#         trainData[counter] = np.reshape(temp[9:438], (1,33,13))
-#
-#         trainLabels[counter] = temp[1]
-#         counter += 1
-
 trainData, trainLabels = Augmenter.runAugment()
 
 
